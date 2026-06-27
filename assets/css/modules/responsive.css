@@ -1,0 +1,324 @@
+/* =============================================
+   MOBİL UYUMLULUK
+   ============================================= */
+
+@media (max-width: 958px) {
+    #kasa-dis-cerceve {
+        height: auto !important;
+        min-height: 100vh;
+        padding: 5px !important;
+        overflow: visible;
+    }
+
+    #kasa-ana-duzen {
+        flex-direction: column;
+    }
+
+    #kasa-sidebar {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        gap: 5px; /* Butonlar arası boşluk */
+    }
+
+    .kasa-sekmeleri-listesi, 
+    .kasa-sabit-butonlar {
+        flex-direction: row !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        gap: 5px !important;
+        flex: 0 0 auto !important;
+    }
+
+    .sidebar-btn {
+        flex: 0 0 auto !important; /* Genişliği içeriğe bırak */
+        min-width: 50px !important;
+        padding: 5px 8px !important;
+        font-size: 11px !important;
+    }
+
+    .sidebar-btn span {
+        font-size: 16px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .kasa-sabit-butonlar .sidebar-btn {
+        min-height: 45px !important;
+        min-width: 80px !important;
+    }
+
+    #kasa-konteyner {
+        padding: 5px !important; /* Boşluğu azalttık */
+        border-radius: 0;
+        border: none;
+        height: auto !important;
+    }
+
+    #sepet-listesi {
+        max-height: 400px;
+        min-height: 200px;
+    }
+
+    #sepet-listesi li {
+        flex-wrap: wrap !important;
+        gap: 5px !important;
+    }
+
+    .urun-sol-kolon {
+        flex: 1 !important;
+    }
+
+    .urun-orta-detay {
+        order: 2;
+        flex: 1 1 auto !important;
+        text-align: left !important;
+        padding: 0 10px !important;
+        margin-top: 0;
+    }
+
+    .urun-detay-metin {
+        font-size: 13px !important;
+    }
+
+    .urun-sag-aksiyonlar {
+        order: 3;
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
+    }
+
+    .toplam-deger {
+        font-size: 24px !important;
+    }
+
+    #onayla-buton {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    #iskonto-buton, #bol-buton, #yuvarla-buton {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    #musteri-ekle-btn,
+    #siparis-notu-btn {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .ust-buton-kucuk {
+        padding: 5px 10px !important;
+        font-size: 12px !important;
+    }
+
+    .modal-icerik {
+        width: 95% !important;
+        padding: 15px;
+    }
+
+    /* Üst Menü Mobil Düzenlemeleri */
+    #hizli-kasa-ust-menu {
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .kasa-logo {
+        margin-right: 0;
+    }
+
+    .ust-sekme-listesi {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 260px;
+        height: calc(100vh - 60px);
+        background: var(--hk-bg-header);
+        flex-direction: column;
+        transition: 0.3s ease-in-out;
+        box-shadow: 10px 0 20px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .ust-sekme-listesi.open {
+        left: 0;
+    }
+
+    .ust-sekme {
+        padding: 15px 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-left: 4px solid transparent;
+        width: 100%;
+        height: auto;
+    }
+
+    .ust-sekme.aktif {
+        border-bottom-color: rgba(255, 255, 255, 0.05);
+        border-left-color: #3498db;
+    }
+
+    .ust-menu-sag-aksiyonlar {
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    .kullanici-bilgi {
+        display: flex;
+        font-size: 11px;
+        padding: 0 8px;
+        border: none;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+
+    .tam-ekran-btn {
+        display: none !important;
+        /* Kullanıcı isteği: mobilde tam ekran butonuna gerek yok */
+    }
+
+    .depo-secici-ust .ust-aktif-depo-adi {
+        max-width: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 11px;
+    }
+}
+
+/* Tablet ve Orta Ölçekli Ekranlar */
+@media (min-width: 959px) and (max-width: 1480px) {
+    .ust-menu-sag-aksiyonlar {
+        margin-left: auto;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .kasa-logo {
+        margin-right: 10px;
+        gap: 0;
+    }
+
+    .ust-sekme {
+        padding: 0 15px;
+    }
+}
+
+/* Sekme emojilerini 1160px ve altında gizle */
+@media (min-width: 959px) and (max-width: 1160px) {
+    .sekme-ikon {
+        display: none;
+    }
+
+    .ust-sekme {
+        gap: 0;
+    }
+}
+
+/* Masraf Sayfası ve Benzer Split Layoutlar İçin 960px Altı Düzenleme */
+@media (max-width: 960px) {
+    .hk-split-layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .masraf-form-panel {
+        width: 100%;
+    }
+
+    .hk-tab-scrollable-container {
+        padding: 15px;
+    }
+
+    /* İade (Refund) Modülü Mobil Düzenleme */
+    #iade-modul-konteyner {
+        flex-direction: column !important;
+        height: auto !important;
+        overflow-y: auto !important;
+    }
+
+    .iade-sol-panel, .iade-sag-panel {
+        flex: none !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 15px;
+    }
+
+    #iade-siparis-detay {
+        height: auto !important;
+        min-height: 300px;
+    }
+
+    .iade-kaydirilabilir-liste {
+        max-height: 400px;
+    }
+}
+
+
+
+/* Ürünler Sayfası Unified Footer Responsiveliği */
+@media (max-width: 1100px) {
+    .terminal-footer.unified-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .pagination-info {
+        order: 1;
+    }
+
+    .pagination-controls-wrapper {
+        order: 2;
+    }
+
+    .footer-stats-combined {
+        order: 3;
+        width: 100%;
+        display: flex;
+        justify-content: space-around; /* 4 tanesini yan yana diz */
+        gap: 10px;
+        padding-top: 12px;
+        border-top: 1px solid var(--hk-border);
+    }
+
+    .terminal-footer.unified-footer .stat-item {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 6px;
+    }
+}
+
+/* Çok küçük ekranlarda (Mobil) 2x2 formuna geç */
+@media (max-width: 600px) {
+    .footer-stats-combined {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .terminal-footer.unified-footer .stat-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+}

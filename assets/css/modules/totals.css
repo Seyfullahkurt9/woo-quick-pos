@@ -1,0 +1,292 @@
+/* =============================================
+   TOPLAM ALANI
+   ============================================= */
+
+.toplam-alani {
+    padding: 10px !important;
+    margin-top: 0 !important;
+    border: none !important;
+    /* Çizgi çerçeve kaldırıldı */
+    border-radius: 12px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    /* Boşluğu padding ile yöneteceğiz */
+    flex-shrink: 0;
+    background: var(--hk-bg-sidebar) !important;
+    min-height: 120px;
+}
+
+.toplam-ozet {
+    flex: 0 0 50% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+    gap: 8px !important;
+    padding-left: 10px;
+    /* Dışa bakan padding */
+}
+
+.toplam-degerler {
+    flex: 0 0 50% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    /* Değerler sağa yaslı */
+    justify-content: center;
+    gap: 4px !important;
+    border-left: none !important;
+    /* Dikey çizgi kaldırıldı */
+    padding-right: 10px;
+    /* Dışa bakan padding */
+}
+
+/* Ödeme Özeti Kartları */
+.odeme-ozet-kart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--hk-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.ozet-kanal {
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--hk-text-muted);
+}
+
+.ozet-tutar {
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--hk-accent);
+}
+
+.toplam-satir {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 10px !important;
+}
+
+.toplam-etiket {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #7f8c8d !important;
+    text-transform: uppercase;
+}
+
+.toplam-deger {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    color: #27ae60 !important;
+    line-height: 1;
+}
+
+#iskonto-temizle-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    cursor: pointer;
+    line-height: 16px;
+    text-align: center;
+    padding: 0;
+    margin-right: 6px;
+    display: none;
+    vertical-align: middle;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 0 rgba(255, 71, 87, 0);
+    font-weight: bold;
+}
+
+#iskonto-temizle-btn:hover {
+    background: #ff6b81;
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 71, 87, 0.6);
+}
+
+.indirim-deger {
+    font-size: 18px !important;
+    color: #e74c3c !important;
+    font-weight: bold !important;
+}
+
+/* =============================================
+   İŞLEM BUTONLARI
+   ============================================= */
+
+.islem-grubu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    /* odeme-secici ile hizalandı */
+    flex-shrink: 0;
+    margin-bottom: 0px;
+}
+
+.islem-sol-grup {
+    display: flex !important;
+    flex: 1 !important;
+    gap: 10px !important;
+}
+
+#onayla-buton {
+    flex: 1 !important;
+    padding: 15px;
+    font-size: 18px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+#iskonto-buton,
+#siparis-notu-btn,
+#yuvarla-buton {
+    flex: 1 !important;
+    padding: 15px 5px;
+    font-size: 13px;
+    background: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#musteri-ekle-btn,
+#siparis-notu-btn {
+    flex: 0.5 !important;
+    /* Bir tık daha dar */
+    padding: 10px 5px;
+    /* Daha az dikey padding */
+    font-size: 11px;
+    /* Daha küçük font */
+    background: #4b6584;
+    /* Orta-Koyu Slate */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#onayla-buton:hover {
+    background: #34495e;
+    transform: scale(1.02);
+}
+
+#iskonto-buton:hover,
+#yuvarla-buton:hover {
+    background: #7f8c8d;
+}
+
+#musteri-ekle-btn:hover,
+#siparis-notu-btn:hover {
+    background: #3c526d;
+    opacity: 0.9;
+}
+
+#siparis-notu-btn.not-var {
+    background: #16a085;
+    box-shadow: 0 0 0 2px rgba(22, 160, 133, 0.18);
+}
+
+#siparis-notu-btn.not-var:hover {
+    background: #138d75;
+}
+
+#siparis-notu-btn.not-var::after {
+    content: " •";
+    font-weight: 900;
+}
+
+/* --- Ödeme Seçici --- */
+.odeme-secici {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+}
+
+.odeme-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--hk-border);
+    background: var(--hk-bg-sidebar);
+    color: var(--hk-text-main);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.odeme-btn.aktif {
+    background: #2c3e50;
+    color: white;
+    border-color: #2c3e50;
+}
+
+.odeme-btn:not(.aktif):hover {
+    background: #eee;
+}
+
+/* 570px üzeri ekranlarda buton hizalamasını sabitle */
+@media (min-width: 571px) {
+
+    .islem-sol-grup,
+    #onayla-buton {
+        flex: 0 0 calc(50% - 2.5px) !important;
+        /* Tam %50 genişlik (gap düşüldü) */
+        min-width: calc(50% - 2.5px) !important;
+        max-width: calc(50% - 2.5px) !important;
+    }
+}
+
+/* --- Kasa Sekmesi Ek Düzen Stilleri --- */
+.kasa-baslik-sag {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#anlik-kasa-buton {
+    background: var(--hk-bg-hover);
+    color: var(--hk-text-main);
+    border: 1px solid var(--hk-border);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#liste-toplami-deger {
+    font-size: 18px;
+    font-weight: bold;
+    color: #95a5a6;
+}
+
+#ara-toplam-deger {
+    font-size: 20px;
+    font-weight: bold;
+    color: #7f8c8d;
+}

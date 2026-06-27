@@ -1,0 +1,582 @@
+/* ===== Hızlı Kasa – Admin Order Tools ===== */
+
+.hk-admin-order-tools {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: -6px -12px -12px;
+    padding: 14px;
+}
+
+.hk-aot-toolbar,
+.hk-aot-actions {
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #d7dee8;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 14px;
+}
+
+.hk-aot-toolbar div {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.hk-aot-toolbar strong {
+    color: #1d2327;
+    font-size: 16px;
+}
+
+.hk-aot-pill {
+    background: #fff;
+    border: 1px solid #d7dee8;
+    border-radius: 999px;
+    color: #3c434a;
+    display: inline-flex;
+    font-size: 12px;
+    line-height: 1;
+    padding: 6px 9px;
+}
+
+.hk-aot-check {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+}
+
+.hk-aot-tabs {
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px;
+    width: fit-content;
+}
+
+.hk-aot-tabs button {
+    background: transparent;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 7px 12px;
+}
+
+.hk-aot-tabs button.is-active {
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+}
+
+.hk-aot-panel {
+    display: none;
+}
+
+.hk-aot-panel.is-active {
+    display: block;
+}
+
+.hk-aot-section-head {
+    align-items: center;
+    border-bottom: 1px solid #edf0f2;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+}
+
+.hk-aot-section-head h4,
+.hk-aot-subtitle {
+    color: #1d2327;
+    font-size: 14px;
+    margin: 0;
+}
+
+.hk-aot-section-head p {
+    color: #646970;
+    margin: 4px 0 0;
+}
+
+.hk-aot-table input,
+.hk-aot-table textarea,
+.hk-aot-grid-row input,
+.hk-aot-meta-row input,
+.hk-aot-meta-row textarea,
+.hk-aot-meta-picker select {
+    border-color: #c3c4c7;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.hk-aot-table textarea {
+    font-family: Consolas, Monaco, monospace;
+    min-width: 260px;
+}
+
+.hk-aot-table small {
+    color: #646970;
+    display: block;
+    margin-top: 4px;
+}
+
+.hk-aot-table th {
+    color: #50575e;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.hk-aot-add-row,
+.hk-aot-grid-row,
+.hk-aot-meta-row {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    display: grid;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 10px;
+}
+
+.hk-aot-add-row {
+    grid-template-columns: 1fr 120px 160px auto;
+}
+
+.hk-aot-grid-row {
+    grid-template-columns: minmax(180px, 1fr) 160px auto;
+}
+
+.hk-aot-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hk-aot-meta-row {
+    grid-template-columns: minmax(180px, 260px) 1fr auto;
+}
+
+.hk-aot-actions {
+    position: sticky;
+    bottom: 32px;
+    z-index: 2;
+}
+
+.hk-aot-meta-picker {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: minmax(280px, 1fr) auto;
+    min-width: min(100%, 520px);
+}
+
+.hk-aot-meta-reference {
+    background: #f8fafc;
+    border: 1px solid #d7dee8;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 9px 10px;
+}
+
+.hk-aot-meta-reference summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.hk-aot-meta-reference div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.hk-aot-meta-reference code {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 999px;
+    color: #3c434a;
+    font-size: 12px;
+    padding: 4px 7px;
+}
+
+#hk-aot-message {
+    flex: 1;
+    font-weight: 600;
+    padding: 0 12px;
+}
+
+#hk-aot-message.is-success {
+    color: #008a20;
+}
+
+#hk-aot-message.is-error {
+    color: #b32d2e;
+}
+
+.hk-aot-currency {
+    color: #646970;
+}
+
+/* ===== Sipariş Bilgileri Panel ===== */
+
+/* Kart kapsayıcı */
+.hk-aot-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Tekil kart */
+.hk-aot-card {
+    background: #f8fafc;
+    border: 1px solid #e2e6eb;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hk-aot-card-header {
+    align-items: center;
+    background: linear-gradient(135deg, #f0f4f8, #e8ecf1);
+    border-bottom: 1px solid #e2e6eb;
+    display: flex;
+    gap: 10px;
+    padding: 12px 16px;
+}
+
+.hk-aot-card-header .dashicons {
+    color: #3858e9;
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+}
+
+.hk-aot-card-header h4 {
+    color: #1d2327;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.hk-aot-card-body {
+    padding: 16px;
+}
+
+/* Kart içi form grid */
+.hk-aot-form-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hk-aot-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hk-aot-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.hk-aot-form-group label {
+    color: #50575e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.hk-aot-form-group input,
+.hk-aot-form-group select,
+.hk-aot-form-group textarea {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 6px;
+    color: #1d2327;
+    font-size: 13px;
+    padding: 8px 10px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+}
+
+.hk-aot-form-group input:focus,
+.hk-aot-form-group select:focus,
+.hk-aot-form-group textarea:focus {
+    border-color: #3858e9;
+    box-shadow: 0 0 0 1px #3858e9;
+    outline: none;
+}
+
+.hk-aot-form-group input[readonly] {
+    background: #f0f0f1;
+    color: #646970;
+    cursor: not-allowed;
+}
+
+.hk-aot-form-group textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+/* Ödeme tutarları satırı (3 sütun) */
+.hk-aot-payment-amounts {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Toggle / Checkbox stili */
+.hk-aot-toggle-group {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.hk-aot-toggle-group input[type="checkbox"] {
+    height: 18px;
+    width: 18px;
+}
+
+.hk-aot-toggle-group span {
+    color: #3c434a;
+    font-size: 13px;
+}
+
+/* Bilgi rozetleri */
+.hk-aot-badge {
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 5px 10px;
+}
+
+.hk-aot-badge.is-yes {
+    background: #e6f4ea;
+    color: #137333;
+}
+
+.hk-aot-badge.is-no {
+    background: #f0f0f1;
+    color: #646970;
+}
+
+.hk-aot-badge.is-warning {
+    background: #fef3e2;
+    color: #b45309;
+}
+
+/* Ödeme yöntemi ipucu */
+.hk-aot-hint {
+    color: #646970;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+/* İade bilgi kartları – kompakt grid */
+.hk-aot-refund-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.hk-aot-refund-item {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e2e6eb;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px 12px;
+}
+
+.hk-aot-refund-item .label {
+    color: #646970;
+    font-size: 12px;
+}
+
+.hk-aot-refund-item .value {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Kart içi ayırıcı çizgi */
+.hk-aot-divider {
+    background: #e2e6eb;
+    height: 1px;
+    margin: 12px 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 782px) {
+    .hk-aot-toolbar,
+    .hk-aot-actions,
+    .hk-aot-toolbar div {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hk-aot-add-row,
+    .hk-aot-grid-row,
+    .hk-aot-meta-row,
+    .hk-aot-meta-picker {
+        grid-template-columns: 1fr;
+    }
+
+    .hk-aot-section-head {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hk-aot-form-grid,
+    .hk-aot-payment-amounts {
+        grid-template-columns: 1fr;
+    }
+
+    .hk-aot-refund-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Sipariş Toplamı Görünüm Düzeltmesi ===== */
+.hk-aot-order-total-display {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d2327;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.hk-aot-order-total-display .woocommerce-Price-amount {
+    color: #3858e9;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* ===== Sepet Ürün Kalemi Görsel Meta Editörü ===== */
+.hk-aot-item-meta-editor {
+    background: #f8fafc;
+    border: 1px solid #e2e6eb;
+    border-radius: 8px;
+    margin-top: 5px;
+    padding: 8px 10px;
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+}
+
+.hk-aot-ime-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.hk-aot-ime-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 100px;
+}
+
+.hk-aot-ime-group.inline-btn {
+    flex: 0 0 auto;
+    min-width: auto;
+}
+
+.hk-aot-ime-group label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hk-aot-ime-group select,
+.hk-aot-ime-group input {
+    font-size: 12px;
+    height: 30px;
+    line-height: 28px;
+    padding: 0 8px;
+    border-radius: 4px;
+    border: 1px solid #c3c4c7;
+    background: #fff;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.hk-aot-ime-group select {
+    padding-right: 24px;
+}
+
+.hk-aot-ime-toggle-advanced {
+    height: 30px;
+    line-height: 28px;
+    padding: 0 8px !important;
+    font-size: 11px !important;
+}
+
+/* Sepet Tablosu İyileştirmeleri */
+.hk-aot-table {
+    border: 1px solid #e2e6eb !important;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.hk-aot-table th {
+    background: #f8fafc;
+    border-bottom: 2px solid #e2e6eb !important;
+    padding: 12px 10px !important;
+}
+
+.hk-aot-table td {
+    padding: 12px 10px !important;
+    vertical-align: middle !important;
+}
+
+.hk-aot-table input[type="number"] {
+    height: 36px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.hk-aot-qty {
+    max-width: 70px;
+}
+
+.hk-aot-subtotal,
+.hk-aot-total {
+    max-width: 110px;
+}
+
+.hk-aot-remove {
+    margin-right: 4px;
+}
+
+.hk-aot-item-meta {
+    margin-top: 6px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 11px;
+    background: #fff;
+    border-color: #cbd5e1;
+}

@@ -1,0 +1,43 @@
+/* =============================================
+   EVRENSEL TEMA TEMİZLEĞİ (STANDALONE FOCUS)
+   Tema bağımsız — Blocksy, Astra, Flavflavor,
+   GeneratePress, OceanWP vs. hepsinde çalışır.
+   ============================================= */
+
+/*
+ * #hizli-kasa-app zaten position:fixed + z-index:999999 ile
+ * tüm ekranı kaplıyor. Tek yapmamız gereken temanın
+ * arkada kalan parçalarının boşluk/scroll oluşturmasını engellemek.
+ */
+
+/* 1. Tema header/footer/sidebar/nav — hepsini evrensel seçiciyle gizle */
+body.hizli-kasa-aktif header,
+body.hizli-kasa-aktif footer,
+body.hizli-kasa-aktif aside,
+body.hizli-kasa-aktif nav,
+body.hizli-kasa-aktif #wpadminbar {
+    display: none !important;
+}
+
+/* 2. Viewport Kilitleme */
+html, body { 
+    overflow: hidden !important; 
+    height: 100vh !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--hk-bg-body) !important;
+}
+
+html { margin-top: 0 !important; }
+
+/* 3. #hizli-kasa-app'ın TÜM atalarını (hangi tema olursa olsun) zorla genişlet */
+body.hizli-kasa-aktif #hizli-kasa-app {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    z-index: 999999 !important;
+}

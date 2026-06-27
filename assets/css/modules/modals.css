@@ -1,0 +1,678 @@
+/* =============================================
+   GENEL MODAL STİLLERİ
+   ============================================= */
+
+.hk-modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-icerik {
+    background: var(--hk-bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: var(--hk-shadow-md);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--hk-text-main);
+    border: 1px solid var(--hk-border);
+}
+
+.modal-icerik h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    flex-shrink: 0;
+    color: var(--hk-text-main);
+    font-weight: 800;
+}
+
+.modal-icerik label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--hk-text-muted);
+}
+
+.modal-icerik input {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    border: 2px solid var(--hk-border);
+    background: var(--hk-bg-body);
+    color: var(--hk-text-main);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.modal-butonlar {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.modal-butonlar button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- Ödeme Bölme Modalı --- */
+.bol-satir {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.bol-input-grup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    margin-left: 15px;
+}
+
+.bol-input-grup label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+}
+
+.bol-input-grup input {
+    margin-bottom: 0 !important;
+    padding: 8px !important;
+    font-size: 16px !important;
+}
+
+#bol-kalan-uyari {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.kalan-tamam {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.kalan-eksik {
+    background: #ffebee;
+    color: #c62828;
+}
+
+/* --- Stok Uyarı Modalı --- */
+#stok-uyari-modal .modal-icerik {
+    border-top: 5px solid #e67e22;
+    max-width: 500px;
+    width: 90%;
+}
+
+#stok-uyari-liste {
+    margin: 15px 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+#stok-uyari-liste li {
+    padding: 10px;
+    border-bottom: 1px solid var(--hk-border);
+    color: var(--hk-danger);
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+/* --- İskonto Modalı --- */
+#iskonto-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+#iskonto-onay {
+    background: #27ae60;
+    color: white;
+}
+
+#iskonto-iptal {
+    background: #eee;
+    color: #333;
+}
+
+.iskonto-modal-alan {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.iskonto-modal-alan label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--hk-text-muted);
+}
+
+.iskonto-modal-yardimci-metin {
+    display: block;
+    margin-top: 10px;
+    color: var(--hk-text-muted);
+    text-align: center;
+}
+
+/* --- Ürün Arama Modalı --- */
+#urun-arama-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+#urun-arama-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid var(--hk-border);
+    background: var(--hk-bg-body);
+    color: var(--hk-text-main);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#arama-sonuclari {
+    max-height: 50vh;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    flex-grow: 1;
+}
+
+#arama-sonuclari li {
+    padding: 12px;
+    border-bottom: 1px solid var(--hk-border);
+    cursor: pointer;
+    color: var(--hk-text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+}
+
+/* --- Fiş Onay Modalı --- */
+#fis-onay-modal {
+    display: none;
+    position: fixed;
+    z-index: 10001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.fis-onay-icerik {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    width: 400px;
+}
+
+.basari-ikon {
+    font-size: 60px;
+    color: #27ae60;
+    margin-bottom: 20px;
+}
+
+.fis-butonlar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.fis-yazdir-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fis-kapat-btn {
+    background: #eee;
+    color: #333;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* --- Stok Düzenle Modalı (Terminal) --- */
+#stok-duzenle-modal .modal-icerik.glass {
+    background: var(--hk-bg-card) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid var(--hk-border) !important;
+    color: var(--hk-text-main) !important;
+    width: 400px !important;
+}
+
+.stok-kontrol-grup {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.mevcut-stok {
+    flex: 1;
+    background: var(--hk-bg-body);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.mevcut-stok label { font-size: 12px; color: #aaa; display: block; margin-bottom: 5px; }
+.mevcut-stok span { font-size: 24px; font-weight: 800; color: #3498db; }
+
+.degisim-input {
+    flex: 1.5;
+}
+
+.degisim-input .input-row {
+    display: flex;
+    background: var(--hk-bg-body);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--hk-border);
+}
+
+.degisim-input button {
+    background: transparent;
+    border: none;
+    color: var(--hk-text-main);
+    width: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.degisim-input button:hover { background: rgba(255, 255, 255, 0.1); }
+
+.degisim-input input {
+    background: transparent !important;
+    border: none !important;
+    color: var(--hk-text-main) !important;
+    text-align: center;
+    margin-bottom: 0 !important;
+    padding: 10px 0 !important;
+}
+/* --- Sipariş Yükleme Overlay --- */
+#order-loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 11000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Varsayılan beyaz */
+}
+
+/* Aydınlık Tema Özel Ayarları */
+.theme-light #order-loading-overlay {
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--hk-text-main);
+}
+
+.order-loading-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    animation: orderFadeInScale 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    max-width: 400px;
+    width: 90%;
+}
+
+.theme-light .order-loading-content {
+    background: white;
+    border: 1px solid var(--hk-border);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+}
+
+@keyframes orderFadeInScale {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.order-loader {
+    width: 70px;
+    height: 70px;
+    border: 6px solid rgba(128,128,128,0.1);
+    border-top: 6px solid var(--hk-accent);
+    border-radius: 50%;
+    animation: orderLoaderSpin 1s linear infinite;
+}
+
+@keyframes orderLoaderSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.order-loading-text {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.order-loading-subtext {
+    font-size: 15px;
+    opacity: 0.7;
+    text-align: center;
+    margin-top: -10px;
+}
+/* --- Barkod Filtreleri --- */
+.modal-filtreler {
+    background: var(--hk-bg-body);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--hk-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.filtre-grup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 150px;
+    position: relative; /* Dropdown için */
+}
+
+.filtre-grup label {
+    margin-bottom: 0 !important;
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--hk-text-muted);
+}
+
+.multi-select-trigger {
+    background: var(--hk-bg-card);
+    border: 1px solid var(--hk-border);
+    color: var(--hk-text-main);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.multi-select-trigger:hover {
+    border-color: var(--hk-accent);
+    background: var(--hk-bg-hover);
+}
+
+.multi-select-trigger span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+.multi-select-trigger::after {
+    content: '▼';
+    font-size: 10px;
+    opacity: 0.5;
+    transition: transform 0.2s;
+}
+
+.filtre-grup.is-open .multi-select-trigger::after {
+    transform: rotate(180deg);
+}
+
+.attr-checkbox-list {
+    display: none; /* Varsayılan kapalı */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--hk-bg-card);
+    border: 1px solid var(--hk-border);
+    border-radius: 8px;
+    padding: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 100;
+    box-shadow: var(--hk-shadow-md);
+    margin-top: 4px;
+}
+
+.filtre-grup.is-open .attr-checkbox-list {
+    display: flex;
+}
+
+.attr-checkbox-list label {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: var(--hk-text-main) !important;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    margin-bottom: 0 !important;
+}
+
+.attr-checkbox-list label:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.attr-checkbox-list input {
+    width: auto !important;
+    margin-bottom: 0 !important;
+    cursor: pointer;
+}
+
+.stok-filtre-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stok-filtre-toggle input {
+    width: auto !important;
+    margin-bottom: 0 !important;
+    cursor: pointer;
+}
+
+/* --- Global Modal Çerçeve ve Özel Z-Index Tanımları --- */
+.modal-cerceve {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+#stok-uyari-modal { z-index: 10000; }
+#iskonto-modal { z-index: 10001; }
+#fis-onay-modal { z-index: 10001; background: rgba(0,0,0,0.9); }
+#gun-sonu-modal { z-index: 10002; }
+#odeme-bol-modal { z-index: 10005; }
+#manuel-urun-modal, #anlik-kasa-modal, #urun-arama-modal, #siparis-notu-modal { z-index: 10006; }
+#stok-duzenle-modal { z-index: 10007; }
+#order-edit-modal, #barkod-yazdir-modal { z-index: 10008; }
+#mobil-qr-modal { z-index: 10009; }
+
+.modal-header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* --- Modal İçerik ve Özel Alan Stilleri --- */
+.stok-uyari-icerik { max-width: 500px; width: 90%; }
+.stok-uyari-icerik h3 { color: var(--hk-warning); }
+.stok-uyari-not { font-size: 13px; color: var(--hk-text-muted); background: var(--hk-bg-hover); padding: 10px; border-radius: 8px; border-left: 4px solid var(--hk-warning); }
+.stok-uyari-btn-cancel { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; background: var(--hk-border); color: var(--hk-text-main); }
+.stok-uyari-btn-confirm { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; background: var(--hk-warning); color: white; }
+
+.iskonto-input-lg { font-size: 24px; text-align: center; font-weight: 800; color: var(--hk-text-main); }
+.iskonto-input-danger { font-size: 24px; text-align: center; font-weight: 800; color: var(--hk-danger); }
+.modal-btn-cancel { background: var(--hk-bg-hover); color: var(--hk-text-main); border: 1px solid var(--hk-border); }
+
+.modal-icerik-sm { width: 450px !important; }
+.modal-icerik-md { width: 500px !important; }
+.modal-icerik-lg { width: 90% !important; max-width: 800px !important; }
+.modal-icerik-xl { width: 900px !important; max-height: 85vh; display: flex; flex-direction: column; }
+.modal-icerik-flex { width: 800px !important; max-height: 90vh; overflow-y: auto; }
+.modal-icerik-mini { width: 400px !important; }
+
+.manuel-fiyat-input { font-size: 20px; font-weight: 800; color: var(--hk-success); }
+
+.siparis-notu-icerik h3 { margin-bottom: 14px; }
+.siparis-notu-textarea {
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
+    padding: 14px;
+    font-size: 15px;
+    line-height: 1.45;
+    border: 2px solid var(--hk-border);
+    background: var(--hk-bg-body);
+    color: var(--hk-text-main);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.siparis-notu-textarea:focus {
+    border-color: var(--hk-accent);
+    outline: none;
+}
+.siparis-notu-alt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+    color: var(--hk-text-muted);
+    font-size: 12px;
+}
+#siparis-notu-temizle {
+    background: transparent;
+    color: var(--hk-text-muted);
+    border: 1px solid var(--hk-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+#siparis-notu-temizle:hover {
+    color: var(--hk-danger);
+    border-color: var(--hk-danger);
+}
+
+.fis-onay-icerik { text-align: center; padding: 50px; }
+.fis-onay-ikon { font-size: 80px; color: var(--hk-success); margin-bottom: 30px; }
+.fis-onay-baslik { color: var(--hk-text-main); margin-bottom: 15px; font-weight: 800; }
+.fis-onay-sub { font-size: 20px; color: var(--hk-text-muted); }
+.fis-yazdir-btn { margin-bottom: 10px; padding: 18px; }
+.fis-kapat-btn { width: 100%; padding: 15px; background: var(--hk-bg-hover); color: var(--hk-text-main); border: 1px solid var(--hk-border); border-radius: 10px; cursor: pointer; font-weight: 700; }
+
+.gun-sonu-yukleniyor { text-align: center; padding: 40px; }
+#gun-sonu-icerik { overflow-y: auto; flex: 1; color: var(--hk-text-main); }
+.gun-sonu-btn-yazdir { padding: 12px; width: auto; min-width: 150px; background: var(--hk-success); border-color: var(--hk-success); }
+
+.modal-icerik-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--hk-border); padding-bottom: 10px; }
+.loading-text { text-align: center; padding: 20px; }
+
+.anlik-kasa-header { margin-bottom: 20px; border-bottom: 1px solid var(--hk-border); padding-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.anlik-kasa-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 16px; }
+.anlik-kasa-total { display: flex; justify-content: space-between; margin-top: 20px; padding-top: 15px; border-top: 2px solid var(--hk-border); font-size: 18px; font-weight: bold; color: var(--hk-success); }
+.anlik-kasa-note { font-size: 11px; color: var(--hk-text-muted); margin-top: 15px; text-align: center; font-style: italic; }
+
+#modal-readonly-msg { color: #f59e0b; font-size: 12px; margin: 0 0 8px; text-align: center; }
+.mobil-qr-icerik { max-width: 400px; padding: 30px; text-align: center; }
+.mobil-qr-icerik h3 { margin-bottom: 15px; }
+.mobil-qr-icerik p { color: #94a3b8; font-size: 14px; }
+#qr-code-display { background: white; padding: 15px; border-radius: 12px; margin: 20px auto; display: inline-block; }
+.mobile-tool-url-wrapper { margin-top: 15px; font-size: 13px; color: #6366f1; }
+.modal-butonlar-center { margin-top: 25px; justify-content: center; }

@@ -1,0 +1,817 @@
+/* =============================================
+   İADE MODÜLÜ (REFUND)
+   ============================================= */
+
+#iade-modul-konteyner {
+    display: flex;
+    height: 100%;
+    background: var(--hk-bg-body);
+    gap: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.iade-sol-panel, .iade-sag-panel {
+    background: var(--hk-bg-card);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--hk-border);
+}
+
+.iade-sol-panel { 
+    flex: 55; 
+    position: relative;
+}
+.iade-sag-panel { flex: 45; }
+
+.iade-ust-cubuk {
+    padding: 15px 20px;
+    background: var(--hk-bg-sidebar);
+    border-bottom: 2px solid var(--hk-border);
+}
+
+.iade-ust-cubuk h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #2c3e50;
+    font-weight: 800;
+}
+
+.iade-baslik-satiri {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.iade-baslik-satiri h2 {
+    margin: 0 !important;
+}
+
+.iade-kucuk-btn {
+    padding: 6px 12px;
+    background: var(--hk-bg-hover);
+    border: 1px solid var(--hk-border);
+    border-radius: 6px;
+    color: var(--hk-text-main);
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.iade-kucuk-btn:hover, .iade-kucuk-btn.aktif {
+    background: var(--hk-accent);
+    color: white;
+    border-color: var(--hk-accent);
+}
+
+.input-buton-grup {
+    display: flex;
+    gap: 8px;
+}
+
+.input-buton-grup input {
+    flex: 1;
+}
+
+.tam-genislik {
+    width: 100%;
+}
+
+/* Gelişmiş Arama Formu */
+.iade-arama-formu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.arama-satiri {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.arama-satiri .input-grup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.arama-satiri label {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--hk-text-muted);
+    text-transform: uppercase;
+}
+
+.arama-satiri input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--hk-border);
+    border-radius: 6px;
+    background: var(--hk-bg-body);
+    color: var(--hk-text-main);
+    font-size: 13px;
+}
+
+.cift-input {
+    display: flex;
+    gap: 5px;
+}
+
+.iade-arama-btn {
+    padding: 10px 20px;
+    background: var(--hk-accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+    transition: opacity 0.2s;
+}
+
+.iade-arama-btn:hover {
+    opacity: 0.9;
+}
+
+/* Arama Sonuçları Listesi */
+.arama-sonuclari-konteyner {
+    padding: 0 20px 20px 20px;
+    border-bottom: 2px solid var(--hk-border);
+}
+
+.arama-sonuclari-konteyner h3 {
+    font-size: 14px;
+    color: var(--hk-text-muted);
+    margin: 15px 0 10px 0;
+}
+
+#iade-sonuc-listesi {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Searching Mode Overlay */
+.searching-mode .arama-sonuclari-konteyner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--hk-bg-card);
+    z-index: 1000;
+    display: flex !important;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.searching-mode .arama-sonuclari-konteyner h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--hk-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searching-mode .sonuc-listesi-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    margin-top: 10px;
+}
+
+.searching-mode #iade-sonuc-listesi {
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#iade-sonuc-listesi li {
+    background: var(--hk-bg-body);
+    border: 1px solid var(--hk-border);
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#iade-sonuc-listesi li:hover {
+    background: var(--hk-bg-hover);
+}
+
+.sonuc-ana {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.sonuc-detay {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: var(--hk-text-muted);
+}
+
+.sonuc-yok {
+    text-align: center;
+    padding: 20px;
+    color: var(--hk-text-muted);
+    font-style: italic;
+}
+
+.iade-panel-icerik {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+#iade-siparis-detay {
+    display: flex;
+    flex-direction: column;
+}
+
+.iade-kaydirilabilir-liste {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-right: -10px; /* Offset for padding if needed */
+}
+
+.iade-kaydirilabilir-liste::-webkit-scrollbar {
+    width: 6px;
+}
+
+.iade-kaydirilabilir-liste::-webkit-scrollbar-thumb {
+    background: var(--hk-border);
+    border-radius: 10px;
+}
+
+.iade-kaydirilabilir-liste::-webkit-scrollbar-thumb:hover {
+    background: var(--hk-text-muted);
+}
+
+
+.iade-bos-durum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #95a5a6;
+    opacity: 0.7;
+}
+
+.bos-ikon { font-size: 48px; margin-bottom: 10px; }
+
+/* Sipariş Detay ve Satırlar */
+/* Sipariş Detay ve Satırlar - Yeni Tasarım */
+.siparis-ozet-v2 {
+    background: #fff;
+    border: 1px solid var(--hk-border);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.siparis-ozet-v2 .ozet-ust {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--hk-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.siparis-ozet-v2 .ozet-sol {
+    display: flex;
+    flex-direction: column;
+}
+
+.siparis-ozet-v2 .ozet-no {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--hk-accent);
+}
+
+.siparis-ozet-v2 .ozet-tarih {
+    font-size: 12px;
+    color: var(--hk-text-muted);
+}
+
+.siparis-ozet-v2 .ozet-sag {
+    text-align: right;
+}
+
+.siparis-ozet-v2 .ozet-toplam-label {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--hk-text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.siparis-ozet-v2 .ozet-toplam-deger {
+    font-size: 22px;
+    font-weight: 900;
+    color: #2c3e50;
+}
+
+.siparis-ozet-v2 .ozet-govde {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--hk-border);
+}
+
+.siparis-ozet-v2 .ozet-kart {
+    background: #fff;
+    padding: 15px 20px;
+}
+
+.siparis-ozet-v2 .kart-baslik {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--hk-text-muted);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.siparis-ozet-v2 .ozet-satir {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.siparis-ozet-v2 .ozet-satir .label {
+    color: #7f8c8d;
+}
+
+.siparis-ozet-v2 .ozet-satir .deger {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.siparis-ozet-v2 .ozet-satir .deger.highlight {
+    color: #e67e22;
+    background: #fff3e0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 800;
+}
+
+.siparis-ozet-v2 .ozet-odeme-detay {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.siparis-ozet-v2 .odeme-turu {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+.siparis-ozet-v2 .odeme-turu.nakit { background: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
+.siparis-ozet-v2 .odeme-turu.kart { background: #e3f2fd; color: #1565c0; border-color: #bbdefb; }
+.siparis-ozet-v2 .odeme-turu.iban { background: #f3e5f5; color: #7b1fa2; border-color: #e1bee7; }
+
+.urun-listesi-baslik {
+    font-weight: bold;
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.iade-urun-satir {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid var(--hk-border);
+    gap: 15px;
+    color: var(--hk-text-main);
+}
+
+.iade-urun-satir:last-child { border-bottom: none; }
+
+.iade-item-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    cursor: zoom-in;
+}
+
+.iade-item-image-placeholder {
+    width: 40px;
+    height: 40px;
+    background: var(--hk-bg-hover, #eee);
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.iade-urun-satir .urun-bilgi { flex: 1; min-width: 0; }
+.iade-urun-satir .urun-ad { font-weight: bold; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.iade-urun-satir .urun-sku { font-size: 11px; color: #999; }
+
+.iade-urun-satir .urun-fiyat-adet { text-align: right; min-width: 100px; }
+.birim-fiyat { font-weight: bold; color: var(--hk-text-main); }
+.mevcut-adet { font-weight: bold; color: #3498db; }
+
+.iade-ekle-btn {
+    padding: 8px 15px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* İade Sepeti Listesi */
+#iade-sepet-listesi { padding: 0; margin: 0; list-style: none; }
+
+#iade-sepet-listesi li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: var(--hk-bg-body);
+    border: 1px solid var(--hk-border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    gap: 10px;
+    color: var(--hk-text-main);
+}
+
+.sepet-item-bilgi { flex: 1; font-size: 13px; }
+.sepet-item-fiyat { font-weight: bold; color: #e53e3e; font-size: 15px; }
+
+.sepet-sil {
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.sepet-sil:hover { color: #e53e3e; }
+
+/* İade Özet */
+.iade-ozet-alani {
+    padding: 20px;
+    background: var(--hk-bg-sidebar);
+    border-top: 2px solid var(--hk-border);
+}
+
+.iade-toplam-satir {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.iade-toplam-satir span:first-child { font-weight: bold; color: #7f8c8d; }
+#iade-toplam-tutar { font-size: 24px; font-weight: 800; color: #e53e3e; }
+
+.iade-buton-grubu {
+    display: flex;
+    gap: 12px;
+}
+
+.iade-islem-btn {
+    flex: 1;
+    padding: 15px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.iade-islem-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* Değişim İçin Kasaya Gönder Butonu */
+.iade-islem-btn.degisim-btn {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
+    margin-top: 0;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.iade-islem-btn.degisim-btn:not(:disabled):hover {
+    background: linear-gradient(135deg, #d35400, #e67e22);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+}
+
+.iade-islem-btn.degisim-btn:not(:disabled):active {
+    transform: translateY(0);
+}
+
+.degisim-mesaj span {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.degisim-mesaj p {
+    color: #e67e22 !important;
+}
+
+.iade-basari-mesaj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 40px;
+}
+
+.iade-basari-mesaj span { font-size: 64px; margin-bottom: 20px; }
+.iade-basari-mesaj p { font-size: 18px; font-weight: bold; color: #2c3e50; }
+.iade-basari-mesaj button { margin-top: 20px; padding: 10px 30px; background: #3498db; color: white; border: none; border-radius: 8px; cursor: pointer; }
+
+/* Tam İade Durumları */
+.fully-refunded-row {
+    opacity: 0.4 !important;
+    background: #f1f1f1 !important;
+    cursor: not-allowed !important;
+    pointer-events: none; /* Tıklamayı tamamen kes */
+}
+
+.fully-refunded-row * {
+    color: #999 !important; /* Tüm alt elemanları gri yap */
+}
+
+.iade-badge {
+    background: #e53e3e;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+/* İade İskonto Alanı */
+#iade-iskonto-konteyner {
+    transition: all 0.3s ease;
+    border: 1px dashed #f1c40f !important;
+    background: rgba(241, 196, 15, 0.05) !important;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+#iade-iskonto-konteyner span {
+    color: var(--hk-text-main);
+    font-size: 13px;
+}
+
+.iskonto-girdi-satiri, .iskonto-limit-satiri {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iskonto-girdi-satiri {
+    margin-bottom: 8px;
+}
+
+.iskonto-girdi-satiri span {
+    font-weight: bold;
+    color: #856404 !important;
+}
+
+.iskonto-limit-satiri span:first-child {
+    font-size: 11px;
+    color: var(--hk-text-muted);
+}
+
+#iade-iskonto-input {
+    background: var(--hk-bg-body);
+    color: var(--hk-text-main);
+    border: 1px solid var(--hk-border);
+    border-radius: 6px;
+    padding: 5px 10px;
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#iade-kalan-iskonto {
+    color: #f39c12 !important;
+    font-weight: bold;
+}
+
+/* İade Ödeme Yöntemi ve Ayarlar Paneli */
+#iade-iskonto-konteyner-alani {
+    padding: 0 20px;
+    margin-top: 15px;
+}
+
+#iade-odeme-yontemi-alani {
+    padding: 0 20px;
+}
+
+.iade-ayarlar-panel {
+    background: var(--hk-bg-sidebar);
+    border: 1px solid var(--hk-border);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.iade-ayar-satir label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--hk-text-muted);
+    text-transform: uppercase;
+}
+
+.iade-odeme-secenekleri {
+    display: flex;
+    gap: 8px;
+}
+
+.iade-odeme-btn-label {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+}
+
+.iade-odeme-btn-label input {
+    display: none;
+}
+
+.iade-odeme-btn-label span {
+    display: block;
+    padding: 10px 5px;
+    background: var(--hk-bg-body);
+    border: 2px solid var(--hk-border);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.iade-odeme-btn-label input:checked + span {
+    background: var(--hk-accent);
+    color: white;
+    border-color: var(--hk-accent);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.iade-ayarlar-panel .hk-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--hk-border);
+    background: var(--hk-bg-body);
+    color: var(--hk-text-main);
+    font-size: 14px;
+}
+
+/* İade Onay Modalı Özel Genişlik */
+.iade-onay-modal-icerik {
+    width: 98% !important;
+    max-width: 1400px !important;
+    height: 95vh !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.iade-modal-layout {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    min-height: 0; /* İçerik taşması için önemli */
+}
+
+.iade-modal-sol {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+    border-right: 1px solid var(--hk-border);
+}
+
+.iade-modal-sag {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- İade Sekmesi Ek Düzen Stilleri --- */
+.iade-btn-accent {
+    background: var(--hk-accent);
+    color: white;
+}
+
+.iade-arama-submit-row {
+    margin-top: 10px;
+}
+
+.iade-modal-ozet-box {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--hk-bg-body);
+    border-radius: 10px;
+    border: 1px solid var(--hk-border);
+}
+
+.iade-modal-ozet-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iade-modal-ozet-label {
+    font-weight: bold;
+    color: var(--hk-text-muted);
+}
+
+.iade-modal-toplam-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iade-modal-toplam-input {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--hk-text-main) !important;
+    background: var(--hk-bg-input);
+    border: 1px dashed var(--hk-border);
+    border-radius: 8px;
+    width: 180px;
+    text-align: right;
+    padding: 8px 45px 8px 12px !important;
+    line-height: normal;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 0 !important;
+}
+
+.iade-modal-toplam-currency {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--hk-danger);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.iade-modal-section {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.iade-btn-cancel {
+    background: var(--hk-bg-body);
+    color: var(--hk-text-main);
+    border: 1px solid var(--hk-border);
+}
+
+.iade-btn-confirm {
+    background: var(--hk-accent);
+    color: white;
+}
