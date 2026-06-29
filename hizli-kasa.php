@@ -122,12 +122,12 @@ add_filter('puc_vcs_update_detection_strategies-hizli-kasa', function ($strategi
 });
 
 $hizli_kasa_update_checker = PucFactory::buildUpdateChecker(
-    'https://github.com/Seyfullahkurt9/hizli-kasa/',
+    'https://github.com/Seyfullahkurt9/woo-quick-pos/',
     __FILE__,
     'hizli-kasa'
 );
 
-$hizli_kasa_update_checker->setBranch('main');
+$hizli_kasa_update_checker->setBranch('master');
 
 // Laragon gibi yerel ortamlarda DNS çözümleme gecikmelerini (cURL error 28) önlemek için zaman aşımını artırıyoruz.
 add_filter('http_request_args', function ($args, $url) {
