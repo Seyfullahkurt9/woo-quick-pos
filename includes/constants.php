@@ -13,6 +13,7 @@ if (!defined('HIZLI_KASA_BOOT_TIME')) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 define('HIZLI_KASA_VERSION', '12.53.0');
 =======
 // Sürüm Sabiti (Ana hizli-kasa.php başlığından otomatik okunur)
@@ -33,6 +34,9 @@ define('HIZLI_KASA_VERSION', '12.54.1');
 =======
 define('HIZLI_KASA_VERSION', '12.54.2');
 >>>>>>> e6bcb88 (fix(print-driver): pass exact backend error message to user and bump version to 12.54.2)
+=======
+define('HIZLI_KASA_VERSION', '12.54.3');
+>>>>>>> 0c125db (fix(mismatch): optimize mismatch query, fix wpdb prepare notices, add composite index and bump version to 12.54.3)
 
 // Harici İndirme ve Servis URL'leri
 define('HIZLI_KASA_HELPER_DOWNLOAD_URL', 'https://github.com/Seyfullahkurt9/web-print-helper/releases/latest/download/web-print-helper.exe');
