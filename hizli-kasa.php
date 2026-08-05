@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Hızlı Kasa
  * Description: avdini için hızlı POS sistemi.
- * Version: 12.50.1
+ * Version: 12.51.0
  * Author: Seyfullah Kurt
  * Requires Plugins: woocommerce
  * Requires at least: 5.8
@@ -18,7 +18,7 @@ if (!defined('ABSPATH'))
 if (!defined('HIZLI_KASA_BOOT_TIME')) {
     define('HIZLI_KASA_BOOT_TIME', microtime(true));
 }
-define('HIZLI_KASA_VERSION', '12.50.1');
+define('HIZLI_KASA_VERSION', '12.51.0');
 define('HIZLI_KASA_PATH', plugin_dir_path(__FILE__));
 define('HIZLI_KASA_URL', plugin_dir_url(__FILE__));
 
@@ -163,8 +163,8 @@ if ((!wp_doing_ajax() || $is_wp_update_ajax) && (!defined('REST_REQUEST') || !RE
         return $strategies;
     });
 
-    $repo_url   = defined('HIZLI_KASA_UPDATE_REPO') ? HIZLI_KASA_UPDATE_REPO : 'https://github.com/Seyfullahkurt9/woo-quick-pos/';
-    $repo_branch = defined('HIZLI_KASA_UPDATE_BRANCH') ? HIZLI_KASA_UPDATE_BRANCH : 'master';
+    $repo_url   = defined('HIZLI_KASA_UPDATE_REPO') ? HIZLI_KASA_UPDATE_REPO : 'https://github.com/Seyfullahkurt9/hizli-kasa/';
+    $repo_branch = defined('HIZLI_KASA_UPDATE_BRANCH') ? HIZLI_KASA_UPDATE_BRANCH : 'main';
 
     $hizli_kasa_update_checker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
         $repo_url,
