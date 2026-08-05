@@ -8,3 +8,11 @@
 *.spec
 /src-driver/standalone/
 
+<<<<<<< HEAD
+=======
+# Executable binaries (distributed via GitHub Releases)
+assets/bin/*.exe
+
+
+
+>>>>>>> d9f57ed (feat(core): migrate driver distribution to github releases and modularize plugin core to v12.52.0)
