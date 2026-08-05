@@ -15,6 +15,7 @@ if (!defined('HIZLI_KASA_BOOT_TIME')) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 define('HIZLI_KASA_VERSION', '12.53.0');
 =======
 // Sürüm Sabiti (Ana hizli-kasa.php başlığından otomatik okunur)
@@ -41,6 +42,9 @@ define('HIZLI_KASA_VERSION', '12.54.3');
 =======
 define('HIZLI_KASA_VERSION', '12.54.4');
 >>>>>>> f0461c6 (fix(updater): fix default public repository URL and branch in updater and bump version to 12.54.4)
+=======
+define('HIZLI_KASA_VERSION', '12.54.5');
+>>>>>>> 9890eaa (fix(core): add function_exists check for hizli_kasa_init and bump version to 12.54.5)
 
 // Harici İndirme ve Servis URL'leri
 define('HIZLI_KASA_HELPER_DOWNLOAD_URL', 'https://github.com/Seyfullahkurt9/web-print-helper/releases/latest/download/web-print-helper.exe');
