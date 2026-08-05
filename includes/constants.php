@@ -8,47 +8,7 @@ if (!defined('HIZLI_KASA_BOOT_TIME')) {
     define('HIZLI_KASA_BOOT_TIME', microtime(true));
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-define('HIZLI_KASA_VERSION', '12.53.0');
-=======
-// Sürüm Sabiti (Ana hizli-kasa.php başlığından otomatik okunur)
-if (!defined('HIZLI_KASA_VERSION')) {
-    preg_match('/Version:\s*([0-9\.]+)/i', (string)@file_get_contents(dirname(__DIR__) . '/hizli-kasa.php', false, null, 0, 500), $m);
-    define('HIZLI_KASA_VERSION', $m[1] ?? '1.0.0');
-}
->>>>>>> c7cb9b4 (refactor(constants): simplify HIZLI_KASA_VERSION reading using WP get_file_data API)
-=======
-define('HIZLI_KASA_VERSION', '12.53.0');
->>>>>>> bf724d3 (fix(core): restore .agents guidelines and reset constants.php to static version definition)
-=======
-define('HIZLI_KASA_VERSION', '12.54.0');
->>>>>>> d191479 (feat(stock): add zero-cost regular & sale price badges to admin stock management list, bump version to 12.54.0)
-=======
-define('HIZLI_KASA_VERSION', '12.54.1');
->>>>>>> 61ead93 (fix(print-manager): improve error guidance for re-pairing and bump version to 12.54.1)
-=======
-define('HIZLI_KASA_VERSION', '12.54.2');
->>>>>>> e6bcb88 (fix(print-driver): pass exact backend error message to user and bump version to 12.54.2)
-=======
-define('HIZLI_KASA_VERSION', '12.54.3');
->>>>>>> 0c125db (fix(mismatch): optimize mismatch query, fix wpdb prepare notices, add composite index and bump version to 12.54.3)
-=======
-define('HIZLI_KASA_VERSION', '12.54.4');
->>>>>>> f0461c6 (fix(updater): fix default public repository URL and branch in updater and bump version to 12.54.4)
-=======
-define('HIZLI_KASA_VERSION', '12.54.5');
->>>>>>> 9890eaa (fix(core): add function_exists check for hizli_kasa_init and bump version to 12.54.5)
-=======
 define('HIZLI_KASA_VERSION', '12.54.6');
->>>>>>> 3610b40 (fix(core): guard hizli_kasa_db_activation with function_exists and bump version to 12.54.6)
 
 // Harici İndirme ve Servis URL'leri
 define('HIZLI_KASA_HELPER_DOWNLOAD_URL', 'https://github.com/Seyfullahkurt9/web-print-helper/releases/latest/download/web-print-helper.exe');
